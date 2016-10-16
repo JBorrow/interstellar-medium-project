@@ -5,6 +5,7 @@ Lecture 1
 ---------
 
 Image quality is key, and is shown by three things:
+
 + SNR (signal-to-noise ratio)
 + Spatial resolution
 + Spectral resolution
@@ -12,11 +13,13 @@ Image quality is key, and is shown by three things:
 A better PSF allows for all of these to be increased as it leads to a higher, thinner peak. Spectral resolution can only be as good as the PSF as our slit has to be made wide enough to let through the PSF.
 
 We can characterise image quality using:
+
 + FWHM
 + Strehl Ratio
 + Included Energy
 
 Our limiting factors:
+
 + Earth's atmosphere
 + Telescope and instrument
 + Detectors, noise
@@ -32,7 +35,8 @@ When light comes to Earth, it is initially undisturbed and has lines of constant
 5. Hits detector - noise
 6. We get the image.
 
-Effects of the Earth's atmosphere
+Effects of the Earth's atmosphere:
+
 + Absorption
 + Dispersion
 + Emission
@@ -45,6 +49,7 @@ Lecture 2
 The effects of seeing can be corrected using adaptive optics. For short exposures without AO, we get a 'speckled' image. Long exposures, seeing evens out.
 
 To combat issues with atmosphere, we put telescopes on mountains:
+
 + Clear skies
 + Good seeing
 + Dark sky
@@ -53,11 +58,13 @@ To combat issues with atmosphere, we put telescopes on mountains:
 ### Telescopes and Imaging Optics
 
 Key factors
+
 + Diffraction
 + Tracking
 + Abberation
 
 Most large telescopes these days are reflectors, and use Alt-Az mounts.
+
 + Small focal length
 + Don't suffer from chromatic abberation
 + Can be larger as can be supported from behind
@@ -67,7 +74,7 @@ For very large mirrors, they are segmented and actively controlled to keep their
 
 ### Telescope Optics
 
-+ Focal ratio: $f/# = \frac{f}{d}$.
++ Focal ratio: $f/\# = \frac{f}{d}$.
 + Plate scale: projected angle on the sky to distance on detector (arcsecond/mm).
 
 ### Niquist Sampling
