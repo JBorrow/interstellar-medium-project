@@ -46,7 +46,7 @@ Quantum fluctuations in the inflation scalar field generated the initial density
 
 Inflation predicts a spectrum of density fluctuations:
 $$
-	|\delta_\kappa|^2 \approx K^n ~ ~ ~ n \approx 1~.
+	|\delta_\kappa|^2 \approx \kappa^n ~ ~ ~ n \approx 1~.
 $$
 
 Structure formation is heavily dependent on the nature of the Dark Matter.
