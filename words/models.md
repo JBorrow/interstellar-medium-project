@@ -56,13 +56,13 @@ $$
 They show that by combining these equations, they can retrieve the Kennicutt-Schmidt law ($\dot{\Sigma}_* \propto \Sigma_{gas}^2$)
 
 $$
-	\dot{\Sigma}_* \approx \frac{\pi G}{F\left(\frac{P_{fin}}{m_*}\right) f_{gas}} \sigma^2_{gas}~,
+	\dot{\Sigma}_* \approx \frac{\pi G}{F\left(\frac{P_{fin}}{m_*}\right) f_{gas}} \Sigma^2_{gas}~,
 $$
 
 if the prefactors do not depend on the surface density. This is tenuous at best; previously they had used that
 
 $$
-	\left(\frac{P_{fin}}{m_*}\right) = 1,420 \mathrm{km/s} \left(\frac{n_H}{100 \mathrm{cm}^{-3}}\right)^{-0.160}~,
+	\left(\frac{P_{fin}}{m_*}\right) = 1,420 ~\mathrm{km/s}~ \left(\frac{n_H}{100 ~\mathrm{cm}^{-3}}\right)^{-0.160}~,
 $$
 
 from @martizzi2015 for the momentum injection per supernova. This expression depends directly on the density of hydrogen in the disk. For high gas fractions at the very least this implies that the prefactor depends direcly on $1/\Sigma_{gas}$ leading to $\dot{\Sigma}_* \propto \Sigma_{gas}$.
