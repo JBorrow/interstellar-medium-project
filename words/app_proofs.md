@@ -59,7 +59,7 @@ $$
 is of order unity. Is this reasonable? Let us examine:
 
 $$
-	F = \frac{(\mathrm{SFR ~to ~SNR}) (\mathrm{m_s/m_*})}{(\mathrm{efficiency ~of ~p ~to ~F ~conversion})}~.
+	F = \frac{(\mathrm{SFR ~to ~SNR}) (\mathrm{efficiency ~of ~p ~to ~F ~conversion})}{(\mathrm{m_s/m_*})}~.
 $$
 
 There is no reason at all that this $F$ should be of order unity.
