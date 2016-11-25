@@ -1,5 +1,29 @@
 import numpy as np
 
+
+def spherical_to_cartesian(r, theta, phi):
+    x = r*np.sin(phi)*np.cos(theta)
+    y = r*np.sin(phi)*np.sin(theta)
+    z = r*np.cos(phi)
+
+    return x, y, z
+
+
+def cylindrical_to_cartesian(r, theta, z):
+    x = r*np.cos(theta)
+    y = r*np.sin(theta)
+    z = z
+
+    return x, y, z
+
+
+def spherical_unit_vec_conversion(rhat, thetahat, phihat, theta, phi):
+    x = np.sin(theta)*np.sin(phi)*rhat + np.cos(theta)*np.cos(phi)*thetahat - np.sin(phi)*phihat
+    y = np.sin(theta)*np.sin(phi)*rhat + np.cos(theta)*np.sin(phi)*thetahat + np.cos(phi)*phihat
+    z = np.cos(theta)*rhat - np.sin(theta)*thetahat
+  
+    return x, y, z
+
 class NFW:
     # use gen(n) to generate n random.
     def __init__(self, R, c):
@@ -8,6 +32,7 @@ class NFW:
 
         self.norm = R**2 * (np.log(c+1) - c/(c+1))
         self.p = np.vectorize(self.__p)
+        self.vel = np.vectorize(self.__vel, excluded='self')
 
 
     def __p(self, r):
@@ -27,6 +52,15 @@ class NFW:
             y = (self.R/4 + 0.001) * np.random.rand()
 
         return x
+
+
+    def __vel(self, theta, phi):
+        # We want randomly distributed in the theta, phi plane with mod 1
+        # Because the halo is virialized
+        rngs = np.random.rand(2)
+        rngs = rngs/rngs.sum()
+
+        return spherical_unit_vec_conversion(0, rngs[0], rngs[1], theta, phi)
 
 
     def gen(self, n=1):
@@ -54,8 +88,7 @@ class GasZ:
 
    
     def __gen(self, n=1):
-        return self.Z*np.arctanh(2*np.random.rand(n) - 1)
-
+        return self.Z*np.arctanh(2*np.random.rand(n) - 1) 
 
 class GasR:
     # use gen(n) to generate n random
@@ -66,6 +99,7 @@ class GasR:
 
         self.norm = R**2
         self.p = np.vectorize(self.__p)
+        self.vel = np.vectorize(self.__vel)
 
 
     def __p(self, r):
@@ -84,6 +118,12 @@ class GasR:
             y = (self.R + 0.001) * np.random.rand()
 
         return x
+
+
+    def __vel(self, theta):
+        # We want all of these going in the same direction -- of theta
+
+        return spherical_unit_vec_conversion(0, 1, 0, theta, 0)
 
 
     def gen(self, n=1):
