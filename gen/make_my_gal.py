@@ -4,11 +4,11 @@ from gen import Generator
 from writer import *
 import h5py
 
-filename = "TestICs.0.h5py"
+filename = "TestICs.0.hdf5"
 n_DM = int(1e5)
 n_gas = int(1e5)
-M_halo = 1e40
-M_disk = 1e30
+M_halo = 1e10
+M_disk = 1e10
 R_NFW = 10
 c_NFW = 40
 R_gas = 30
