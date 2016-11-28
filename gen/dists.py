@@ -32,7 +32,6 @@ class NFW:
 
         self.norm = R**2 * (np.log(c+1) - c/(c+1))
         self.p = np.vectorize(self.__p)
-        self.vel = np.vectorize(self.__vel, excluded='self')
 
 
     def __p(self, r):
@@ -54,13 +53,14 @@ class NFW:
         return x
 
 
-    def __vel(self, theta, phi):
-        # We want randomly distributed in the theta, phi plane with mod 1
-        # Because the halo is virialized
-        rngs = np.random.rand(2)
-        rngs = rngs/rngs.sum()
+    def vel(self, r):
+        # Can be completely virialized, doesn't matter
 
-        return spherical_unit_vec_conversion(0, rngs[0], rngs[1], theta, phi)
+        rngs = np.random.rand(3, len(r))
+        rngs = rngs/rngs.sum(0)
+
+        return rngs
+
 
 
     def gen(self, n=1):
@@ -123,7 +123,7 @@ class GasR:
     def __vel(self, theta):
         # We want all of these going in the same direction -- of theta
 
-        return spherical_unit_vec_conversion(0, 1, 0, theta, 0)
+        return spherical_unit_vec_conversion(np.zeros_like(theta), np.zeros_like(theta), np.ones_like(theta), np.zeros_like(theta), theta)
 
 
     def gen(self, n=1):
