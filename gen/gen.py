@@ -28,7 +28,6 @@ class Generator:
         self.dm_theta = 2*np.pi*np.random.rand(self.n_DM)
         self.dm_phi = np.pi*np.random.rand(self.n_DM)
         self.dm_r = self.nfw_gen.gen(self.n_DM)
-        print(self._mod_v(self.dm_r).shape, self.nfw_gen.vel(self.dm_r).shape)
         self.dm_v_x, self.dm_v_y, self.dm_v_z = self._mod_v(self.dm_r)*self.nfw_gen.vel(self.dm_r)
 
         return self.dm_theta, self.dm_phi, self.dm_r, self.dm_v_x, self.dm_v_y, self.dm_v_z
