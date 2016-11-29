@@ -26,7 +26,7 @@ class Generator:
         self.nfw_gen = dists.NFW(self.R_NFW, self.c_NFW)
         
         self.dm_theta = 2*np.pi*np.random.rand(self.n_DM)
-        self.dm_phi = np.pi*np.random.rand(self.n_DM)
+        self.dm_phi = np.arccos(2*np.random.rand(self.n_DM) - 1)
         self.dm_r = self.nfw_gen.gen(self.n_DM)
         self.dm_v_x, self.dm_v_y, self.dm_v_z = self._mod_v(self.dm_r)*self.nfw_gen.vel(self.dm_r)
 
@@ -55,7 +55,7 @@ class Generator:
 
 
     def _convert_coords(self):
-        self.dm_x, self.dm_y, self.dm_z = dists.spherical_to_cartesian(self.dm_r, self.dm_phi, self.dm_theta)
+        self.dm_x, self.dm_y, self.dm_z = dists.spherical_to_cartesian(self.dm_r, self.dm_theta, self.dm_phi)
         self.gas_x, self.gas_y, self.gas_z = dists.cylindrical_to_cartesian(self.gas_r, self.gas_theta, self.gas_z)
 
         return self.dm_x, self.dm_y, self.dm_z, self.gas_x, self.gas_y, self.gas_z
