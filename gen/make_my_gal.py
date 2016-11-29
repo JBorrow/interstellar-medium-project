@@ -7,14 +7,14 @@ import h5py
 filename = "TestICs.0.hdf5"
 n_DM = int(1e5)
 n_gas = int(1e5)
-M_halo = 1e10
+M_halo = 1e12
 M_disk = 1e10
-R_NFW = 10
+R_NFW = 20
 c_NFW = 40
-R_gas = 30
-max_gas = 10
-Z_gas = 4
-G = 1
+R_gas = 10
+max_gas = 30
+Z_gas = 2
+G = 4.302e-6 # kpc Ms km/s 
 
 print("Generating particles, this may take some time")
 gen = Generator(n_DM, n_gas, M_halo, M_disk, R_NFW, c_NFW, R_gas, max_gas, Z_gas, G)

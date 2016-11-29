@@ -56,8 +56,8 @@ class NFW:
     def vel(self, r):
         # Can be completely virialized, doesn't matter
 
-        rngs = np.random.rand(3, len(r))
-        rngs = rngs/rngs.sum(0)
+        rngs = np.random.rand(3, len(r)) - 0.5
+        rngs = rngs/abs(rngs).sum(0)
 
         return rngs
 

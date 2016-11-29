@@ -3,7 +3,7 @@ import dists
 
 
 class Generator:
-    def __init__(self, n_DM, n_gas, M_halo, M_disk, R_NFW, c_NFW, R_gas, max_gas, Z_gas, G=1):
+    def __init__(self, n_DM, n_gas, M_halo, M_disk, R_NFW, c_NFW, R_gas, max_gas, Z_gas, G=6.67e-8):
         self.n_DM = n_DM
         self.n_gas = n_gas
         self.M_halo = M_halo
