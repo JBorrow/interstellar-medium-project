@@ -24,6 +24,7 @@ def spherical_unit_vec_conversion(rhat, thetahat, phihat, theta, phi):
   
     return x, y, z
 
+
 class NFW:
     # use gen(n) to generate n random.
     def __init__(self, R, c):
@@ -57,7 +58,7 @@ class NFW:
         # Can be completely virialized, doesn't matter
 
         rngs = np.random.rand(3, len(r)) - 0.5
-        rngs = rngs/abs(rngs).sum(0)
+        rngs = rngs/np.sqrt((rngs**2).sum(0))
 
         return rngs
 
@@ -89,6 +90,7 @@ class GasZ:
    
     def __gen(self, n=1):
         return self.Z*np.arctanh(2*np.random.rand(n) - 1) 
+
 
 class GasR:
     # use gen(n) to generate n random
